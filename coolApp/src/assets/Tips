@@ -1,0 +1,31 @@
+<p>Listado de Trabajadores</p>
+<!--Directiva Estructural-->
+<ul>
+	<li *ngFor="let usuario of users">
+		<span>Nombre:{{usuario.name}}</span>
+		&nbsp;
+		<span *ngIf="usuario.city.length > 0">Ciudad:{{usuario.city}}</span>
+	</li>
+</ul>
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css']
+})
+export class ProductsComponent implements OnInit {
+
+	public users = [
+		{ name: "obduber", city: "Barquisimeto" },
+		{ name: "Francisco", city: "" },
+		{ name: "Franc", city: "San Felipe" }
+	];
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
